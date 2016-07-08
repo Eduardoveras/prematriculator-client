@@ -48,10 +48,23 @@ begin
         
         Client.call(:assign_course_to_student,  message: { arg0: mat, arg1: cod, arg2: nam })
         
-        puts "New Student Added! Press any key to continue"
+        puts "Added Course! Press any key to continue"
         gets.chomp
         
     when "rsc" # remove_student_course 
+        puts "Matricula:"
+        mat = gets.chomp
+        
+        puts "Course Code:"
+        cod = gets.chomp
+        
+        puts "Course name:"
+        nam = gets.chomp
+        
+        Client.call(:remove_student_course,  message: { arg0: mat, arg1: cod, arg2: nam })
+        
+        puts "Removed Course! Press any key to continue"
+        gets.chomp
         
     when "msi" # modify_student_info
         puts "Matricula:"
