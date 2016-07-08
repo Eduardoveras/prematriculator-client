@@ -37,10 +37,40 @@ begin
         gets.chomp
         
     when "acts" # assign_course_to_student
+        puts "Matricula:"
+        mat = gets.chomp
+        
+        puts "Course Code:"
+        cod = gets.chomp
+        
+        puts "Course name:"
+        nam = gets.chomp
+        
+        Client.call(:assign_course_to_student,  message: { arg0: mat, arg1: cod, arg2: nam })
+        
+        puts "New Student Added! Press any key to continue"
+        gets.chomp
         
     when "rsc" # remove_student_course 
         
     when "msi" # modify_student_info
+        puts "Matricula:"
+        mat = gets.chomp
+        
+        puts "First Name:"
+        fir = gets.chomp
+        
+        puts "Last Name:"
+        las = gets.chomp
+        
+        puts "Career:"
+        car = gets.chomp
+        
+        Client.call(:modify_student_info, message: { arg0: mat, arg1: fir, arg2: las, arg3: car })
+        
+        puts "Student Modified ! Press any key to continue"
+        gets.chomp
+        
     when "ds" # delete_student
         puts "Matricula:"
         mat = gets.chomp
